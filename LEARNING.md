@@ -17,5 +17,5 @@
 
 ### What I Learned
 Learnt to run java program in IntelliJ.
-Connected Github to my VSCode
+Connected Github to my VSCode for my Learning.md
 
