@@ -1,8 +1,10 @@
 package com.taskdesk.model;
 
 import java.util.Date;
+import java.util.Enumeration;
 
 public class Ticket {
+    private static int nextId =1;
     private int id;
     private String title;
     private String description;
@@ -13,8 +15,8 @@ public class Ticket {
     private Date createdAt;
     private Date updatedAt;
 
-    Ticket(int id, String title, String description, String status, String priority, User reporter, User assignee) {
-        this.id = id;
+    Ticket(String title, String description, String status, String priority, User reporter, User assignee) {
+        this.id = nextId++;
         this.title = title;
         this.description = description;
         this.status = status;
@@ -49,6 +51,9 @@ public class Ticket {
 //        this.status = status;
 //    }
     public String getPriority() {
+        if(priority==null || (!priority.equalsIgnoreCase("low")&&!priority.equalsIgnoreCase("medium")&& !priority.equalsIgnoreCase("high") && !priority.equalsIgnoreCase("urgent"))) {
+            throw new IllegalStateException("Invalid priority: "+priority);
+        }
         return priority;
     }
 //    public void setPriority(String priority) {
@@ -78,6 +83,31 @@ public class Ticket {
 //    public void setUpdatedAt(Date updatedAt) {
 //        this.updatedAt = updatedAt;
 //    }
+    public boolean changeStatus(String newStatus) {
+        if(newStatus == null) return false;
+        else if(this.status.equals("OPEN") && newStatus.equals("IN_PROGRESS")) {
+            this.status = newStatus;
+            this.updatedAt = new Date();
+            return true;
+        }
+        else if(this.status.equals("IN_PROGRESS") && newStatus.equals("RESOLVED")) {
+            this.status = newStatus;
+            this.updatedAt=new Date();
+            return true;
+        }
+        else if(this.status.equals("RESOLVED")&& newStatus.equals("OPEN")) {
+            this.status=newStatus;
+            this.updatedAt=new Date();
+            return true;
+        }
+        else if(this.status.equals("RESOLVED") && newStatus.equals("CLOSED")) {
+            this.status=newStatus;
+            this.updatedAt=new Date();
+            return true;
+        }
+        else
+            return false;
+    }
     @Override
     public String toString(){
         return "Ticket:{id: "+id+", Title: "+title+", Description: "+description+", Status: "+status+", Priority: "+priority+", Reporter: "+reporter+", Assignee: "+assignee+", Created at: "+createdAt+", Updated at: "+updatedAt+"}";

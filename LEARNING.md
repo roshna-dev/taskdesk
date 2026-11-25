@@ -43,9 +43,9 @@
 
 1. [x] Watch (38 min): Section 3: Commenting & User Input; Conditionals & Loops; Arrays, Methods & Strings. Take the Java Fundamentals quiz.
 2. [x] Read: The arrays and control-flow pages in dev.java Language Basics.
-3. [ ] Build: Port five pure helper functions from one of your Node projects into static methods in a Utils class. Then write a console ticket intake: read a title and a priority with Scanner , validate both, print a summary, and loop until the user types quit .
+3. [x] Build: Port five pure helper functions from one of your Node projects into static methods in a Utils class. Then write a console ticket intake: read a title and a priority with Scanner , validate both, print a summary, and loop until the user types quit .
 4. [x] Drill: Course exercises "Grade Calculator" and "Array and String Utilities".
-5. [ ] Done when: Each ported method prints the same result as its Node original.
+5. [x] Done when: Each ported method prints the same result as its Node original.
 
 #### *Notes*
 
@@ -74,7 +74,7 @@
 
 -Did comparison checking for counting vowels but it returns string and not boolean so changed it into if("aeiou".indexOf(c)>=0).
 
------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
 
 ### Day 3: Classes, inheritance, packages
 
@@ -110,8 +110,51 @@
 - Implemented a student profile to understand classes, constructors, methods and 'this' keyword. 
 - Implemented an Employee Hierarchy system using inheritance, constructors, overriding, 'this' and 'super' keywords.
 - Implemented com.taskdesk.model with 6 subclasses including main class. Ticket,User,Comment with private fields, constructors and getters, Extended User with Agent and Customer class. Overridden toString() to read the tickets and successfully created three users and printed five tickets.
-- 
+
 
 #### *Challenges / Mistakes*
 
-- 
+- Had some difficulties in commiting files to GitHub because of unresolved files, then used AI assistance to figure out the exact problem I need to solve. 
+
+--------------------------------------------------------------------------------------------------------
+
+### Day 4: Encapsulation, static, abstraction, lambdas
+
+1. [x] Watch (49 min): Section 4: Encapsulation & Data Hiding; The static Keyword; Abstraction: abstract classes & interfaces; Functional Interfaces & Lambda Expressions.
+2. [x] Read: The interfaces pages in dev.java Object-Oriented Programming, then the first lambda tutorial in Generics, Lambda, and Pattern Matching.
+3. [x] Build: Enforce status moves inside Ticket , so an illegal move is refused. Add a static id counter. Write a Notifier interface with ConsoleNotifier and EmailNotifier . Define your own TicketFilter functional interface and call a filter method with lambdas for urgent tickets and for one agent's tickets.
+4. [x] Drill: Any three of "Bank Account with Encapsulation", "Shapes with Abstraction and Polymorphism","Track Library Members with Static Members", "Build a Notification System" and "Apply Discounts with Lambda Expressions".
+5. [x] Done when: Code outside Ticket cannot put a ticket into an illegal status.
+
+#### *Notes*
+
+- Encapsulation is basically data hiding. The methods in the particular class controls how outside code can interact with it.  Eg. Salary is private so encapsulation helps in hiding the data. 
+- Getters and Setters are the methods or behavior used in the encapsulation mechanism. 
+- Setters should validate and not blindly assign.
+- static fields store data shared across all objects of that class and its methods run without needing an object.
+- static final Constants are one value for the whole class and cannot be reassigned. 
+- static keyword can be called with ClassName.VariableName and it does not need an object to be called. 
+- Abstraction lets developers hide unnecessary internal details and expose what is necessary. It also lets different classes share a common way to interact.
+- Abstraction can be implemented using Abstract classes and Interfaces. 
+- Interface defines what it can do without telling what it will be doing. 
+- Abstract class is an incomplete parent class and it can hold shared fields and methods but cannot be instantiated directly.
+- Functional Interface is an interface with exactly one abstract method.
+- Lambda expression implements the functional interface. 
+- L.E implement the single abstract method. 
+- Every java class inherits from java.lang.Object -> common methods are toString(),equals(), hashCode() and can be used using @Override.
+
+#### *What I Learned* 
+
+- Drilled "Bank Account with Encapsulation", "Shapes with Abstraction and Polymorphism","Track Library Members with Static Members", "Build a Notification System" and "Apply Discounts with Lambda Expressions" (course exercises). Helped me understand the concepts of encapsulation. inheritance, abstraction, abstract class, polymorphism, overriding, overloading, interfaces, static usage and lambda expressions for functional interfaces. 
+- I enforced status moves using boolean if-else condition which sets the newStatus to curStatus if the move is legal and updates the time and returns true/false.
+- Implemented a dynamic id counter using static in Ticket.java which generates Id automatically with incrementation ( static id).
+- Implemented notification interface with Email and Console notification. 
+- Built and defined a TicketFilter interface with lambda expression that retrieves URGENT and Agent tickets.
+
+#### *Challenges / Mistakes*
+
+- Faced some exception error because of gap but fixed it with .trim().
+
+---------------------------------------------------------------------------------------------------------
+
+### Day 5: Polymorphism, the Object class, finish v0
