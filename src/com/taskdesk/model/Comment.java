@@ -3,18 +3,19 @@ package com.taskdesk.model;
 import java.util.Date;
 
 public class Comment {
+    private static int nextId=1;
     private int id;
     private String ticket;
     private String author;
     private String body;
     private Date createdAt;
 
-    Comment(int id, String name, String ticket, String author, String body, Date createdAt) {
-        this.id = id;
+    Comment( String ticket, String author, String body) {
+        this.id = nextId++;
         this.ticket=ticket;
         this.author=author;
         this.body=body;
-        this.createdAt=createdAt;
+        this.createdAt=new Date();
     }
     public int getId(){
         return id;
@@ -46,4 +47,9 @@ public class Comment {
 //    public void setCreatedAt(Date createdAt){
 //        this.createdAt=createdAt;
 //    }
+
+    @Override
+    public String toString() {
+        return "Comment {id=" + id + ", ticket=" + ticket + ", author=" + author + ", body=" + body+ ", createdAt=" + createdAt + "}";
+    }
 }

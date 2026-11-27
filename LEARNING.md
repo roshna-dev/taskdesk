@@ -140,8 +140,7 @@
 - Abstract class is an incomplete parent class and it can hold shared fields and methods but cannot be instantiated directly.
 - Functional Interface is an interface with exactly one abstract method.
 - Lambda expression implements the functional interface. 
-- L.E implement the single abstract method. 
-- Every java class inherits from java.lang.Object -> common methods are toString(),equals(), hashCode() and can be used using @Override.
+- L.E implement the single abstract method.
 
 #### *What I Learned* 
 
@@ -158,3 +157,13 @@
 ---------------------------------------------------------------------------------------------------------
 
 ### Day 5: Polymorphism, the Object class, finish v0
+
+1. [ ] Watch (20 min): Section 4: Java Memory & Object Class; Polymorphism in Java. Take the Object Oriented Programming quiz.
+2. [ ] Read: Finish dev.java Object-Oriented Programming. Then find the records tutorial under Getting to Know the Language. The course does not cover records, and you use them for every API payload from Week 3.
+3. [ ] Build: Implement equals and hashCode on Ticket . Add a console menu: create a ticket, list tickets,assign, change status, add a comment, quit. Keep all data in memory. Write a README that says how to run it. Tag v0 .
+4. [ ] Drill: None. The checkpoint proof task takes this slot
+
+#### *Notes*
+
+- Every java class inherits from java.lang.Object -> common methods are toString(),equals(), hashCode() and can be used using @Override.
+- toString() helps in reading the data. equals() helps to check if two objects are equal and return boolean value. It will also check null value or if this class belongs to any other class it will return false. hashCode() returns the hashcode of an object. 

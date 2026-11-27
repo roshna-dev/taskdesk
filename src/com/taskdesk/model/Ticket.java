@@ -1,7 +1,7 @@
 package com.taskdesk.model;
 
 import java.util.Date;
-import java.util.Enumeration;
+import java.util.*;
 
 public class Ticket {
     private static int nextId =1;
@@ -14,6 +14,7 @@ public class Ticket {
     private User assignee;
     private Date createdAt;
     private Date updatedAt;
+    private List<Comment> comments = new ArrayList<>();
 
     Ticket(String title, String description, String status, String priority, User reporter, User assignee) {
         this.id = nextId++;
@@ -68,9 +69,9 @@ public class Ticket {
     public User getAssignee() {
         return assignee;
     }
-//    public void setAssignee(String assignee) {
-//        this.assignee = assignee;
-//    }
+    public void setAssignee(Agent assignee) {
+        this.assignee = assignee;
+    }
     public Date getCreatedAt() {
         return createdAt;
     }
@@ -108,6 +109,28 @@ public class Ticket {
         else
             return false;
     }
+    public void addComment(Comment comment){
+        comments.add(comment);
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this==obj) return true;
+        if(obj==null || getClass()!=obj.getClass()) return false;
+
+        Ticket t=(Ticket)obj;
+        return this.id==t.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Integer.hashCode(id);
+    }
+
     @Override
     public String toString(){
         return "Ticket:{id: "+id+", Title: "+title+", Description: "+description+", Status: "+status+", Priority: "+priority+", Reporter: "+reporter+", Assignee: "+assignee+", Created at: "+createdAt+", Updated at: "+updatedAt+"}";
