@@ -158,9 +158,9 @@
 
 ### Day 5: Polymorphism, the Object class, finish v0
 
-1. [ ] Watch (20 min): Section 4: Java Memory & Object Class; Polymorphism in Java. Take the Object Oriented Programming quiz.
-2. [ ] Read: Finish dev.java Object-Oriented Programming. Then find the records tutorial under Getting to Know the Language. The course does not cover records, and you use them for every API payload from Week 3.
-3. [ ] Build: Implement equals and hashCode on Ticket . Add a console menu: create a ticket, list tickets,assign, change status, add a comment, quit. Keep all data in memory. Write a README that says how to run it. Tag v0 .
+1. [x] Watch (20 min): Section 4: Java Memory & Object Class; Polymorphism in Java. Take the Object Oriented Programming quiz.
+2. [x] Read: Finish dev.java Object-Oriented Programming. Then find the records tutorial under Getting to Know the Language. The course does not cover records, and you use them for every API payload from Week 3.
+3. [x] Build: Implement equals and hashCode on Ticket . Add a console menu: create a ticket, list tickets,assign, change status, add a comment, quit. Keep all data in memory. Write a README that says how to run it. Tag v0 .
 4. [ ] Drill: None. The checkpoint proof task takes this slot
 
 #### *Notes*
